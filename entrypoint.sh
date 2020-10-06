@@ -22,6 +22,8 @@ function split_csv() {
 
 ALL_IMAGE_TAG=()
 
+env
+
 echo "Authenticating docker to gcloud ..."
 echo $INPUT_GCLOUD_SERVICE_KEY | python -m base64 -d >/tmp/key.json
 
