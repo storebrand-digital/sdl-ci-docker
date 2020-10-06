@@ -23,7 +23,7 @@ The tag for the image. To create multiple tag of the same image, provide comma (
 
 Default: `latest`.
 
-To use the pushed `Tag Name` as image tag, see the [example](https://github.com/RafikFarhad/example/build_only_tags.yml).
+To use the pushed `Tag Name` as image tag, see the [example](https://github.com/storebrand-digital/example/build_only_tags.yml).
 
 ### `dockerfile`
 The image building Dockerfile. 
@@ -39,7 +39,7 @@ If you use multi-stage build and want to stop builing at a certain image, you ca
 
 ## Example usage
 Put desired yml section in the `.github/workflows/build.yml` file
-### [`To perform build & push on every git push`](https://github.com/RafikFarhad/example/build.yml)
+### [`To perform build & push on every git push`](https://github.com/storebrand-digital/example/build.yml)
 
 ```
 name: Push to GCR Github Action
@@ -48,7 +48,7 @@ jobs:
   build-and-push-to-gcr:
     runs-on: ubuntu-latest
     steps:
-      - uses: RafikFarhad/push-to-gcr-github-action@v3
+      - uses: storebrand-digital/push-to-gcr-github-action@v3
         with:
           gcloud_service_key: ${{ secrets.GCLOUD_SERVICE_KEY }}
           registry: gcr.io
@@ -56,7 +56,7 @@ jobs:
           image_name: server-end
 
 ```
-### [`To perform build & push only on tag publish`](https://github.com/RafikFarhad/example/build_only_tags.yml)
+### [`To perform build & push only on tag publish`](https://github.com/storebrand-digital/example/build_only_tags.yml)
 
 ```
 name: Push to GCR Github Action
@@ -71,7 +71,7 @@ jobs:
       - name: Get the version
         id: get_tag_name
         run: echo ::set-output name=GIT_TAG_NAME::${GITHUB_REF/refs\/tags\//}
-      - uses: RafikFarhad/push-to-gcr-github-action@v3
+      - uses: storebrand-digital/push-to-gcr-github-action@v3
         with:
           gcloud_service_key: ${{ secrets.GCLOUD_SERVICE_KEY }}
           registry: gcr.io
