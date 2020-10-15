@@ -54,6 +54,7 @@ else
     exit 1
 fi
 
+echo "Image tag = ${ALL_IMAGE_TAG[@]}"
 for IMAGE_TAG in ${ALL_IMAGE_TAG[@]}; do
 
     IMAGE_NAME="$INPUT_REGISTRY/$INPUT_PROJECT_ID/$INPUT_IMAGE_NAME:$IMAGE_TAG"
