@@ -54,6 +54,8 @@ else
     exit 1
 fi
 
+ALL_IMAGE_TAG+=("${GITHUB_SHA}")
+ALL_IMAGE_TAG+=("${GITHUB_SHA:0:8}")
 echo "Image tag = ${ALL_IMAGE_TAG[@]}"
 for IMAGE_TAG in ${ALL_IMAGE_TAG[@]}; do
 
