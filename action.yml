@@ -20,7 +20,7 @@ inputs:
     description: The image name
     required: true
     default: backend-server
-  image_tag:
+  extra_image_tag:
     description: Tag name
     required: false
     default: latest
