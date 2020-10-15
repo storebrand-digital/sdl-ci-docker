@@ -34,7 +34,7 @@ else
     exit 1
 fi
 
-split_csv $INPUT_IMAGE_TAG ALL_IMAGE_TAG
+split_csv $INPUT_EXTRA_IMAGE_TAG ALL_IMAGE_TAG
 
 
 TEMP_IMAGE_NAME="$INPUT_IMAGE_NAME:temporary"
